@@ -1,27 +1,74 @@
 <resources>
+
     <string name="app_name1">나혼자 잘~산다</string>
 
     <string name="initial_logo">Logo</string>
+
     <string name="id">ID</string>
+
     <string name="password">Password</string>
+
     <string name="findmyinfo">아이디/비밀번호 찾기</string>
+
     <string name="membership">회원가입</string>
+
     <string name="login_logo">login_logo</string>
+
     <string name="login">Login</string>
+
     <string name="joinFin">완료</string>
+
     <string name="addSearch">검색</string>
+
     <string name="searchAddress">읍, 면, 동으로 검색해주세요</string>
+
     <string name="register">등록하기</string>
+
     <string name="ch10">10대</string>
+
     <string name="chMale">남성</string>
+
     <string name="ckFemale">여성</string>
+
     <string name="coAddress">주소</string>
+
     <string name="coAge">나이</string>
+
     <string name="ch40">40대 이상</string>
+
     <string name="chAddress">우리 동네 사람만</string>
+
     <string name="ch20">20대</string>
+
     <string name="coFilter">필터</string>
+
     <string name="coSex">성별</string>
+
     <string name="ch30">30대</string>
+
     <string name="coText">내용</string>
+
+    <string name="app_name_chat">채팅</string>
+    <string name="app_name_chatwith">@string/user1</string>
+    <string name="app_name_mainpage">메인페이지</string>
+    <string name="app_name_detailpage">게시판</string>
+    <string name="app_name_writepage">상품 등록</string>
+
+    <string name="title1">친환경 청송사과</string>
+    <string name="place1">동의대역 2번 출구</string>
+    <string name="price1">개당 800원</string>
+
+    <string name="title2">국내산 양파 상태 좋아요</string>
+    <string name="place2">동의빌라 인근</string>
+    <string name="price2">개당 500원</string>
+
+    <string name="title3">엽기떡볶이 같이 시켜먹어요~!</string>
+    <string name="place3">가야 홈플러스 뒷문 인근</string>
+    <string name="price3">가격 미정</string>
+
+    <string name="user1">강수나</string>
+    <string name="last_chat1">문학과 삶 팔렸나요?</string>
+
+    <string name="user2">sunakang</string>
+    <string name="last_chat2">감사합니다</string>
 </resources>

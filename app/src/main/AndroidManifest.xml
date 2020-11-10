@@ -40,6 +40,18 @@
             android:name=".WriteCommunity"
             android:label="글쓰기">
         </activity>
+        <activity
+            android:name="com.example.teamproject.Chatmain"
+            android:label="@string/app_name_chat"></activity>
+        <activity
+            android:name="com.example.teamproject.Chatroom"
+            android:label="@string/app_name_chatwith"></activity>
+        <activity
+            android:name="com.example.teamproject.Detailpage"
+            android:label="@string/app_name_detailpage"></activity>
+        <activity
+            android:name="com.example.teamproject.Writepage"
+            android:label="@string/app_name_writepage"></activity>
 
     </application>
 </manifest>

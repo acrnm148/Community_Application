@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name1">나혼자 잘~산다</string>
+
+    <string name="initial_logo">Logo</string>
+    <string name="id">ID</string>
+    <string name="password">Password</string>
+    <string name="findmyinfo">아이디/비밀번호 찾기</string>
+    <string name="membership">회원가입</string>
+    <string name="login_logo">login_logo</string>
+    <string name="login">Login</string>
+    <string name="joinFin">완료</string>
+    <string name="addSearch">검색</string>
+    <string name="searchAddress">읍, 면, 동으로 검색해주세요</string>
+    <string name="register">등록하기</string>
+    <string name="ch10">10대</string>
+    <string name="chMale">남성</string>
+    <string name="ckFemale">여성</string>
+    <string name="coAddress">주소</string>
+    <string name="coAge">나이</string>
+    <string name="ch40">40대 이상</string>
+    <string name="chAddress">우리 동네 사람만</string>
+    <string name="ch20">20대</string>
+    <string name="coFilter">필터</string>
+    <string name="coSex">성별</string>
+    <string name="ch30">30대</string>
+    <string name="coText">내용</string>
+</resources>

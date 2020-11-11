@@ -1,8 +1,11 @@
 package com.example.teamproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -20,14 +23,15 @@ public class Address extends AppCompatActivity {
         //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
         tb.setTitleTextColor(Color.BLACK);
 
-        /*Button logo = (Button) findViewById(R.id.joinFin);
+        //메인페이지로 이동
+        Button logo = (Button) findViewById(R.id.joinFin);
         logo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int id = v.getId();
                 Intent it = new Intent(getApplicationContext(), Mainpage.class);
                 startActivity(it);
             }
-        });*/ //메인페이지로 넘어감
+        });
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

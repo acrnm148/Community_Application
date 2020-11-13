@@ -16,11 +16,11 @@ public class Address extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.address);
 
+        //뒤로가기 버튼
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
         setSupportActionBar(tb) ;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.back);
-        //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
         tb.setTitleTextColor(Color.BLACK);
 
         //메인페이지로 이동
@@ -33,9 +33,10 @@ public class Address extends AppCompatActivity {
             }
         });
     }
+    //toolbar의 back키 눌렀을 때 동작
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+            case android.R.id.home:{
                 finish();
                 return true;
             }

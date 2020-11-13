@@ -17,7 +17,6 @@ public class CheckMyInfo extends AppCompatActivity {
         setSupportActionBar(tb) ;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.back);
-        //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
         tb.setTitleTextColor(Color.BLACK);
     }
     public boolean onOptionsItemSelected(MenuItem item) {

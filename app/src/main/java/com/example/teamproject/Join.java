@@ -17,7 +17,7 @@ public class Join extends AppCompatActivity {
         setContentView(R.layout.join);
 
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
-        setSupportActionBar(tb) ;
+        setSupportActionBar(tb);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.back);
         tb.setTitleTextColor(Color.BLACK);

@@ -55,6 +55,17 @@
         <activity
             android:name="com.example.teamproject.Writepage"
             android:label="@string/app_name_writepage"></activity>
-
+        <activity android:name=".notice"
+            android:label="@string/app_name2"/>
+        <activity android:name=".soldlist"
+            android:label="@string/app_name3"/>
+        <activity android:name=".purchase"
+            android:label="@string/app_name4"/>
+        <activity android:name=".myscripts"
+            android:label="@string/app_name5"/>
+        <activity android:name=".review"
+            android:label="@string/app_name6"/>
+        <activity android:name=".community_main"
+            android:label="@string/app_name7"/>
     </application>
 </manifest>

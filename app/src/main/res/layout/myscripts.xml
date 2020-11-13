@@ -17,7 +17,7 @@
         android:id="@+id/게시글"
         android:layout_width="match_parent"
         android:layout_height="33dp"
-        android:background="@drawable/back"
+        android:background="@drawable/back_arrow"
         android:gravity="center"
         android:text="내 게시글" />
 

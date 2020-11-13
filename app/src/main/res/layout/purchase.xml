@@ -66,7 +66,6 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/btnth"
             android:backgroundTint="#FFFFFF"
             android:text="구매완료"
             android:textColor="#3589f1"
@@ -84,7 +83,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#3589f1"
-            android:background="@drawable/btnth"
             android:text="이 상점에 대한 후기"
             app:backgroundTint="#FFFFFF" />
     </LinearLayout>
@@ -138,7 +136,6 @@
             android:layout_width="123dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/btnth"
             android:text="구매완료"
             android:textColor="#3589f1"
             app:backgroundTint="#FFFFFF" />
@@ -154,7 +151,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/btnth"
             android:text="이 상점에 대한 후기"
             android:textColor="#3589f1"
             app:backgroundTint="#FFFFFF" />

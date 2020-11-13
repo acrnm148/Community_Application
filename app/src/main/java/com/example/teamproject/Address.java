@@ -20,7 +20,7 @@ public class Address extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
         setSupportActionBar(tb) ;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.back_arrow);
         tb.setTitleTextColor(Color.BLACK);
 
         //메인페이지로 이동

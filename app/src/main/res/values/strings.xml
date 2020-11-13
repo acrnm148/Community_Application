@@ -79,4 +79,70 @@
     <string name="app_name5">내게시글</string>
     <string name="app_name6">후기작성</string>
     <string name="app_name7">커뮤니티 게시판</string>
+
+
+
+    <string name="app_name_">내 상점</string>
+    <string name="app_name_review">후기</string>
+    <string name="app_name_sell">판매 상품</string>
+    <string name="app_name_report">상점 신고/차단</string>
+    <string name="left1">TODO</string>
+    <string name="mystore">내 상점</string>
+    <string name="store_name">뽀삐 베이커리</string>
+    <string name="introduction1">우리집 마카롱이 제일 맛있어~!</string>
+    <string name="introduction_2">네고 사절</string>
+    <string name="introduction_3">직거래 우대</string>
+
+    <string name="Report">TODO</string>
+    <string name="Review">TODO</string>
+    <string name="Receipt">TODO</string>
+
+    <string name="sell">판매 상품</string>
+    <string name="review_">후기</string>
+    <string name="report">상점 신고/차단</string>
+    <string name="home">TODO</string>
+    <string name="pencil">TODO</string>
+    <string name="chat">TODO</string>
+    <string name="community">TODO</string>
+    <string name="mypage">TODO</string>
+    <string name="left2">TODO</string>
+    <string name="sell_list">판매 내역</string>
+    <string name="name1">아이패드 에어3</string>
+    <string name="date1">2019년 12월 5일</string>
+    <string name="state1">사용한지 한 달 되었습니다. 펜슬 2세대 포함 60만원에 팝니다.</string>
+    <string name="ipad">TODO</string>
+    <string name="button1">거래 완료</string>
+    <string name="name2">문학과 삶 대학 교재</string>
+    <string name="date2">2020년 10월 10일</string>
+    <string name="state2">사용 흔적 거의 없습니다. 1만원에 팝니다.</string>
+    <string name="button2">판매 중</string>
+    <string name="left3">TODO</string>
+    <string name="review">후기</string>
+    <string name="storename1">강가네 손만두</string>
+    <string name="storename2">국이네 다꾸샵</string>
+    <string name="storename3">진주의 집게버거</string>
+    <string name="review1">양파 상태도 너무 좋고 판매자분도 너무 친절하셔서 좋았어요! 다음에도 거래했으면 좋겠어요^^</string>
+    <string name="review2">엽떡 혼자 시켜먹기엔 양이 많아 고민하고 있었는데 깔끔하게 나눠먹을 수 있어서 좋았어요. 하지만 양이 조금 작은 느낌이었어요..</string>
+    <string name="review3">사과가 조금 필요했는데 함께 구매해서 싸게 적당히 살 수 있었어요! 번창하세요~</string>
+    <string name="Title1">국내산 양파 상태좋아요</string>
+    <string name="Title2">엽기떡볶이 같이 시켜먹어요~!</string>
+    <string name="Title3">친환경 청송사과</string>
+    <string name="left">TODO</string>
+    <string name="report_choice">신고유형 선택</string>
+    <string name="todo">TODO</string>
+    <string name="leftreport">TODO</string>
+    <string name="report_list">신고유형 선택</string>
+    <string name="reportlist1">상점 차단</string>
+    <string name="reportlist2">거래사기 (1:1 상담)</string>
+    <string name="reportlist3">거래 금지 품목</string>
+    <string name="reportlist4">거래 금지 품목</string>
+    <string name="reportlist5">언어폭력</string>
+    <string name="reportlist6">거래비매너 (거래파기, 늦은배송)</string>
+    <string name="reportlist7">광고 (교신 및 상점홍보)</string>
+    <string name="home_navigation">home</string>
+    <string name="pencil_navigation">write</string>
+    <string name="chat_navigation">chat</string>
+    <string name="community_navigation">community</string>
+    <string name="mypage_navigation">mypage</string>
+
 </resources>

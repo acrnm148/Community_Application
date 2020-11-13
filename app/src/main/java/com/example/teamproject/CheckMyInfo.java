@@ -16,7 +16,7 @@ public class CheckMyInfo extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
         setSupportActionBar(tb) ;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.back_arrow);
         tb.setTitleTextColor(Color.BLACK);
     }
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -1,4 +1,4 @@
-package com.example.mypage;
+package com.example.teamproject;
 
 import android.content.Intent;
 import android.graphics.Color;

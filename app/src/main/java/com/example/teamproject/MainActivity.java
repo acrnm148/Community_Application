@@ -1,4 +1,4 @@
-package com.example.mypage;
+package com.example.teamproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

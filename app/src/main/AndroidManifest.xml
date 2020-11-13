@@ -8,7 +8,7 @@
         android:label="@string/app_name1"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TeamProject">>
+        android:theme="@style/Theme.TeamProject">
         <activity android:name=".Logo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,5 +67,28 @@
             android:label="@string/app_name6"/>
         <activity android:name=".community_main"
             android:label="@string/app_name7"/>
+
+
+        <activity android:name=".mystore"
+            android:label="내 상점"/>
+        <activity android:name=".sellActivity"
+            android:label="@string/app_name_sell"/>
+
+        <activity android:name=".reviewActivity"
+            android:label="@string/app_name_review"/>
+
+        <activity android:name=".reportActivity"
+            android:label="@string/app_name_report"/>
+
+
     </application>
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+    </uses-permission>
+
+    <meta-data android:name="com.kakao.sdk.AppKey" android:value="jpDSbuUWWaeRPElA3IGoRCjfPHc="/>
+
+
+
 </manifest>

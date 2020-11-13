@@ -1,5 +1,4 @@
-package com.example.mypage;
-
+package com.example.teamproject;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;

@@ -13,7 +13,7 @@ public class Mypage_writeReview extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.review); //*** xml 파일명 수정 ***
+        setContentView(R.layout.Mypage_WriteReview); //*** xml 파일명 수정 ***
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
         setSupportActionBar(tb) ;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼

@@ -9,7 +9,7 @@
     android:focusable="true"
 
     android:tag="1"
-    tools:context=".mystore">
+    tools:context=".Mystore">
 
 
     <TextView

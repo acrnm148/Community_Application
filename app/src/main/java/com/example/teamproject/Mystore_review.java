@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class reviewActivity extends AppCompatActivity {
+public class Mystore_review extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class mystore extends AppCompatActivity {
+public class Mystore extends AppCompatActivity {
 
     ImageView intent_image;
     ImageView intent_review;
@@ -34,7 +34,7 @@ public class mystore extends AppCompatActivity {
         public void onClick(View v) {
 
             //Toast.makeText(getApplicationContext(),"액티비티 전환",Toast.LENGTH_LONG).show();
-            Intent intent= new Intent(com.example.teamproject.mystore.this,sellActivity.class);
+            Intent intent= new Intent(Mystore.this, Mystore_sellList.class);
 
 
         startActivity(intent);
@@ -46,7 +46,7 @@ public class mystore extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(),"액티비티 전환",Toast.LENGTH_LONG).show();
-                Intent intent= new Intent(com.example.teamproject.mystore.this,reviewActivity.class);
+                Intent intent= new Intent(Mystore.this, Mystore_review.class);
 
                 startActivity(intent);
             }
@@ -58,7 +58,7 @@ public class mystore extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(),"액티비티 전환",Toast.LENGTH_LONG).show();
-                Intent intent= new Intent(com.example.teamproject.mystore.this,reportActivity.class);
+                Intent intent= new Intent(Mystore.this, Mystore_black.class);
 
                 startActivity(intent);
             }

@@ -6,11 +6,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class Mypage extends AppCompatActivity {
 
 
 
@@ -29,28 +28,28 @@ public class MainActivity extends AppCompatActivity {
         Button imageButton = (Button) findViewById(R.id.공지사항);
         imageButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(),notice.class);
+                Intent intent = new Intent(getApplicationContext(), Mypage_notice.class);
                 startActivity(intent);
             }
         });
         Button Button = (Button) findViewById(R.id.판매내역);
         Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(),soldlist.class);
+                Intent intent = new Intent(getApplicationContext(), Mypage_sellList.class);
                 startActivity(intent);
             }
         });
         Button bt1 = (Button) findViewById(R.id.구매내역);
         bt1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(),purchase.class);
+                Intent intent = new Intent(getApplicationContext(), Mypage_buyList.class);
                 startActivity(intent);
             }
         });
         Button bt2 = (Button) findViewById(R.id.내게시글);
         bt2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(),myscripts.class);
+                Intent intent = new Intent(getApplicationContext(), Mypage_myScripts.class);
                 startActivity(intent);
             }
         });

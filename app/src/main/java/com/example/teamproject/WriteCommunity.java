@@ -17,7 +17,7 @@ public class WriteCommunity extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
         setSupportActionBar(tb) ;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.back_arrow);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.left_arrow);
         tb.setTitleTextColor(Color.BLACK);
 
 /*

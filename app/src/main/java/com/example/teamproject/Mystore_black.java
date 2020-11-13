@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class reportActivity extends AppCompatActivity {
+public class Mystore_black extends AppCompatActivity {
     Button but_1;
     Button but_2;
     Button but_3;

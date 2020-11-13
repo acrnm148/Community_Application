@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/app_toolbar_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:background="#38C4C4C4"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/프로필"
+            android:layout_width="50dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/profilephoto"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/메인설명"
+            android:layout_width="129dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="뽀삐네 과자상점\n[주소]\n경남 양산시 중부동"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp">
+
+            <Button
+                android:id="@+id/수정"
+                android:layout_width="match_parent"
+                android:layout_height="89dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginRight="26dp"
+                android:layout_weight="1"
+                android:text="수정"
+                app:backgroundTint="#27ADEA"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#38C4C4C4" />
+
+    <Button
+        android:id="@+id/공지사항"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="공지사항"
+        android:textSize="20sp"
+        app:backgroundTint="#3598F1"
+        app:iconTint="#FFFFFF"
+        app:strokeColor="#38C4C4C4" />
+
+    <Button
+        android:id="@+id/내동네설정"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="내 동네 설정"
+        android:textSize="20sp"
+        app:backgroundTint="#3598F1" />
+
+    <Button
+        android:id="@+id/판매내역"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="판매내역"
+        android:textSize="20sp"
+        app:backgroundTint="#3598F1" />
+
+    <Button
+        android:id="@+id/구매내역"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="구매내역"
+        android:textSize="20sp"
+        app:backgroundTint="#3598F1" />
+
+    <Button
+        android:id="@+id/내게시글"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="내 게시글"
+        android:textSize="20sp"
+        app:backgroundTint="#3598F1" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="#3589f1"
+        app:itemTextColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <FrameLayout
+        android:id="@+id/Main_Frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+</LinearLayout>
+

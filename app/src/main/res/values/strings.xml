@@ -71,4 +71,12 @@
 
     <string name="user2">sunakang</string>
     <string name="last_chat2">감사합니다</string>
+
+    <string name="app_name">마이 페이지</string>
+    <string name="app_name2">공지사항</string>
+    <string name="app_name3">판매내역</string>
+    <string name="app_name4">구매내역</string>
+    <string name="app_name5">내게시글</string>
+    <string name="app_name6">후기작성</string>
+    <string name="app_name7">커뮤니티 게시판</string>
 </resources>

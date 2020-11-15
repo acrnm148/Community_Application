@@ -41,7 +41,7 @@ public class Mystore_black extends AppCompatActivity {
             }
         });
 
-        but_2 = (Button)findViewById(R.id.button2);
+        but_2 = (Button)findViewById(R.id.community_write);
 
         but_2.setOnClickListener(new View.OnClickListener() {
             @Override

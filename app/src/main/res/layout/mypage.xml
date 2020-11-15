@@ -122,7 +122,7 @@
         app:itemIconTint="#3589f1"
         app:itemTextColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_navigation"
+        app:menu="@menu/bottom_navigation_view"
         tools:layout_editor_absoluteX="16dp" />
 
     <FrameLayout

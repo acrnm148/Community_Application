@@ -62,12 +62,12 @@ public class Mainpage extends AppCompatActivity {
 //    }
 }
         //chatmain 화면
-//        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
-//        setSupportActionBar(tb) ;
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
-//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.left_arrow);
-//        //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
-//        tb.setTitleTextColor(Color.BLACK);
+ //       Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
+//       setSupportActionBar(tb) ;
+  //      getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
+    //    getSupportActionBar().setHomeAsUpIndicator(R.drawable.left_arrow);
+   //     //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
+   //     tb.setTitleTextColor(Color.BLACK);
 
 
 //    public boolean onOptionsItemSelected(MenuItem item) {

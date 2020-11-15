@@ -55,7 +55,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/community_write"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#ffffff"
@@ -90,7 +90,7 @@
                     app:srcCompat="@drawable/prop2" />
 
                 <TextView
-                    android:id="@+id/textView28"
+                    android:id="@+id/pirimiri"
                     android:layout_width="321dp"
                     android:layout_height="51dp"
                     android:layout_weight="1"
@@ -117,10 +117,11 @@
                 android:text="혹시.. 양이 너무 많아서 그런데 엽떡 같이 드실 분 있을까요...?ㅠㅠ" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/community_sangse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#1AC4C4C4"
+                android:clickable="true"
                 android:text="댓글 확인"
                 android:textColor="#1d2b78"
                 app:backgroundTint="#1AC4C4C4" />
@@ -169,10 +170,11 @@
                 android:text="안녕하세요 오늘 날씨가 참 좋네요~!!" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/community_sangse2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#1AC4C4C4"
+                android:clickable="true"
                 android:text="댓글 확인"
                 android:textColor="#1d2b78"
                 app:backgroundTint="#1AC4C4C4" />
@@ -185,7 +187,7 @@
                 app:itemIconTint="#3589f1"
                 app:itemTextColor="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:menu="@menu/bottom_navigation"
+                app:menu="@menu/bottom_navigation_view"
                 tools:layout_editor_absoluteX="16dp" />
 
             <FrameLayout

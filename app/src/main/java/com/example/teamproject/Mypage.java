@@ -16,7 +16,7 @@ public class Mypage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.mypage);
 
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
         setSupportActionBar(tb) ;
@@ -50,6 +50,13 @@ public class Mypage extends AppCompatActivity {
         bt2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), Mypage_myScripts.class);
+                startActivity(intent);
+            }
+        });
+        Button bt3 = (Button) findViewById(R.id.내동네설정);
+        bt1.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), Address.class);
                 startActivity(intent);
             }
         });

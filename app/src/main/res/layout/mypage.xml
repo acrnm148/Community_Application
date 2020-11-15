@@ -2,8 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -84,7 +82,7 @@
         app:strokeColor="#38C4C4C4" />
 
     <Button
-        android:id="@+id/내동네설정"
+        android:id="@+id/dongnesuljung"
         android:layout_width="match_parent"
         android:layout_height="76dp"
         android:text="내 동네 설정"
@@ -114,6 +112,7 @@
         android:text="내 게시글"
         android:textSize="20sp"
         app:backgroundTint="#3598F1" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavi"
         android:layout_width="match_parent"

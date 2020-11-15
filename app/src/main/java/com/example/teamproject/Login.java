@@ -42,7 +42,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 startActivity(it3);
                 break;
             case R.id.testButton://커뮤니티 글쓰기 -> 나중에 지우기(테스트용)
-                Intent it4 = new Intent(getApplicationContext(), WriteCommunity.class);
+                Intent it4 = new Intent(getApplicationContext(), Mypage.class);
                 startActivity(it4);
                 break;
             default:

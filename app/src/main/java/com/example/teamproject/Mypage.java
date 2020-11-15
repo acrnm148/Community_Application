@@ -12,7 +12,6 @@ import android.widget.Button;
 public class Mypage extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +28,13 @@ public class Mypage extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), Mypage_notice.class);
+                startActivity(intent);
+            }
+        });
+        Button bt3 = (Button) findViewById(R.id.dongnesuljung);
+        bt3.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), Address.class);
                 startActivity(intent);
             }
         });
@@ -53,13 +59,7 @@ public class Mypage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button bt3 = (Button) findViewById(R.id.내동네설정);
-        bt1.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), Address.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 

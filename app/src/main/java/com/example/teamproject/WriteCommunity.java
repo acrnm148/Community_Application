@@ -1,8 +1,11 @@
 package com.example.teamproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -37,7 +40,16 @@ public class WriteCommunity extends AppCompatActivity {
                 startActivity(it);
             }
         });*/
+
+        Button imageButton = (Button) findViewById(R.id.register);
+        imageButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(), CommunityMain.class);
+                startActivity(intent);
+            }
+        });
     }
+
     //toolbar의 back키 눌렀을 때 동작
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

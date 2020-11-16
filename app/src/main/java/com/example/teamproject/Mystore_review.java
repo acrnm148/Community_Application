@@ -12,7 +12,7 @@ public class Mystore_review extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.review);
+        setContentView(R.layout.mystore_review);
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar3) ;
         setSupportActionBar(tb) ;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼

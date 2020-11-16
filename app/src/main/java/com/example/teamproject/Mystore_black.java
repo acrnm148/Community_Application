@@ -22,7 +22,7 @@ public class Mystore_black extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.report);
+        setContentView(R.layout.mystore_black);
 
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar5) ;
         setSupportActionBar(tb) ;

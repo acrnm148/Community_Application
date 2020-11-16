@@ -20,7 +20,7 @@ public class Mystore_sellList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sell);
+        setContentView(R.layout.mystore_selllist);
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar4);
         setSupportActionBar(tb);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼

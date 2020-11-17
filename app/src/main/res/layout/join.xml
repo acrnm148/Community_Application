@@ -41,6 +41,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/joinresnum"
         app:layout_constraintEnd_toEndOf="@+id/joinresnum"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/joinresnum"
         app:layout_constraintTop_toTopOf="parent" />
 

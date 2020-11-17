@@ -3,6 +3,7 @@ package com.example.teamproject;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -15,22 +16,25 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Join extends AppCompatActivity {
-    public EditText join_Name;
-    public EditText join_resnum;
-    public EditText join_Number;
-    public EditText join_ID;
-    public EditText join_PW;
-    public EditText join_PwCheck;
+    private EditText joinID;
+    private EditText joinPW;
+    private EditText joinName;
+    private EditText joinJumin;
+    private EditText joinCallnum;
+    private EditText joinPW_check;
 
+    private DatabaseReference mDatabase;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.join);
@@ -41,27 +45,80 @@ public class Join extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.left_arrow);
         tb.setTitleTextColor(Color.BLACK);
 
-        join_Name = (EditText) findViewById(R.id.joinName);
-        join_resnum = (EditText) findViewById(R.id.joinresnum);
-        join_Number = (EditText) findViewById(R.id.joinNumber);
-        join_ID = (EditText) findViewById(R.id.joinID);
-        join_PW = (EditText) findViewById(R.id.joinPW);
-        join_PwCheck = (EditText) findViewById(R.id.joinPwCheck);
-        Button join = (Button) findViewById(R.id.joinFin);
 
+
+
+        joinID = (EditText) findViewById(R.id.joinID);
+        joinPW = (EditText) findViewById(R.id.joinPW);
+        joinName = (EditText) findViewById(R.id.joinName);
+        joinJumin = (EditText) findViewById(R.id.joinresnum);
+        joinCallnum = (EditText) findViewById(R.id.joinNumber);
+        joinPW_check = (EditText) findViewById(R.id.joinPwCheck);
+
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        readUser();
+
+        Button join = (Button) findViewById(R.id.joinFin);
         join.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference();
-                myRef.child("user").push().setValue(join_Name.getText().toString());
-                myRef.child("user").push().setValue(join_resnum.getText().toString());
-                myRef.child("user").push().setValue(join_Number.getText().toString());
-                myRef.child("user").push().setValue(join_ID.getText().toString());
-                myRef.child("user").push().setValue(join_PW.getText().toString());
-                myRef.child("user").push().setValue(join_PwCheck.getText().toString());
+                String getUserID = joinID.getText().toString();
+                String getUserPw = joinPW.getText().toString();
+                String getUserName = joinName.getText().toString();
+                String getUserJumin = joinJumin.getText().toString();
+                String getUserCallnum = joinCallnum.getText().toString();
+                String getUserPw_check = joinPW_check.getText().toString();
+
+                HashMap result = new HashMap<>();
+                result.put("ID",getUserID);
+                result.put("PW",getUserPw);
+                result.put("NAME",getUserName);
+                result.put("JUMIN",getUserJumin);
+                result.put("CALLNUM",getUserCallnum);
+                result.put("PW_CHECK",getUserPw_check);
+                writeNewUser("1",getUserID,getUserPw, getUserName, getUserJumin, getUserCallnum, getUserPw_check);
+
                 int id = v.getId();
                 Intent it = new Intent(getApplicationContext(), Address.class);
                 startActivity(it);
+            }
+        });
+    }
+    private void writeNewUser(String num,String id, String pw, String name, String jumin, String callnum, String pw_check){
+        User user = new User(id, pw, name, jumin, callnum, pw_check);
+
+        mDatabase.child("users").child(name).setValue(user) //!!!!!!!!!
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(Join.this, "저장완료", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Join.this, "저장실패", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+    }
+    private void readUser(){
+        mDatabase.child("users").child("1").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.getValue(User.class) != null){
+                    User post = snapshot.getValue(User.class);
+                    Log.w("FireBaseData", "getData"+post.toString());
+                }else{
+                    Toast.makeText(Join.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("FireBaseData", "loadPost:onCancelled", error.toException());
             }
         });
     }
@@ -76,3 +133,4 @@ public class Join extends AppCompatActivity {
     }
 
 }
+

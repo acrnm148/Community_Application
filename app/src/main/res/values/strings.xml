@@ -145,5 +145,8 @@
     <string name="chat_navigation">chat</string>
     <string name="community_navigation">community</string>
     <string name="mypage_navigation">mypage</string>
+    <string name="communityWrite">커뮤니티 글쓰기</string>
+    <string name="findMyInfo">아이디·비밀번호 찾기</string>
+    <string name="email">Email</string>
 
 </resources>

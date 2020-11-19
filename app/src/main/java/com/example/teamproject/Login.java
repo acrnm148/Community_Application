@@ -17,11 +17,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class Login extends AppCompatActivity {
-    EditText loginID, loginPW;
+public class Login extends AppCompatActivity implements View.OnClickListener{
+    private EditText loginID, loginPW;
     private FirebaseAuth firebaseAuth;
-/*    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference databaseReference = firebaseDatabase.getReference();*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,53 +30,61 @@ public class Login extends AppCompatActivity {
         //Login editText
         loginID = (EditText) findViewById(R.id.username);
         loginPW = (EditText) findViewById(R.id.password);
-
         Button loginB = findViewById(R.id.loginB);
         TextView findIDB = findViewById(R.id.findmyinfo);
         TextView joinFinB = findViewById(R.id.membership);
         Button testWriteB = findViewById(R.id.testButton);
 
-/*        loginB.setOnClickListener(this);
+
+        loginID.setOnClickListener(this);
+        loginPW.setOnClickListener(this);
+        loginB.setOnClickListener(this);
         findIDB.setOnClickListener(this);
         joinFinB.setOnClickListener(this);
-        testWriteB.setOnClickListener(this);*/
-
-        loginB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String id = loginID.getText().toString().trim();
-                String pwd = loginPW.getText().toString().trim();
-
-                firebaseAuth.signInWithEmailAndPassword(id, pwd)
-                        .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(Login.this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Login.this, Address.class);
-                                    startActivity(intent);
-                                } else {
-                                    Toast.makeText(Login.this, "로그인 오류", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-                switch (v.getId()) {
-                    case R.id.findmyinfo://아이디/비밀번호 찾기
-                        Intent it2 = new Intent(getApplicationContext(), FindMyInfo.class);
-                        startActivity(it2);
-                        break;
-                    case R.id.membership://회원가입
-                        Intent it3 = new Intent(getApplicationContext(), Join.class);
-                        startActivity(it3);
-                        break;
-                    case R.id.testButton://커뮤니티 글쓰기 -> 나중에 지우기(테스트용)
-                        Intent it4 = new Intent(getApplicationContext(), CommunityMain.class);
-                        startActivity(it4);
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
+        testWriteB.setOnClickListener(this);
     }
+
+    private void login(){
+        String id = loginID.getText().toString().trim();
+        String pwd = loginPW.getText().toString().trim();
+
+        firebaseAuth.signInWithEmailAndPassword(id, pwd)
+                .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Login.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Login.this, Mainpage.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(Login.this, "로그인 오류", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.loginB:
+                login();
+                break;
+            case R.id.findmyinfo://아이디/비밀번호 찾기
+                Intent it2 = new Intent(getApplicationContext(), FindMyInfo.class);
+                startActivity(it2);
+                break;
+            case R.id.membership://회원가입
+                Intent it3 = new Intent(getApplicationContext(), Join.class);
+                startActivity(it3);
+                break;
+            case R.id.testButton://커뮤니티 글쓰기 -> 나중에 지우기(테스트용)
+                Intent it4 = new Intent(getApplicationContext(), CommunityMain.class);
+                startActivity(it4);
+                break;
+            default:
+                break;
+        }
+    }
+
+
 }

@@ -73,15 +73,20 @@ public class Writepage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                ppname = pname.getText().toString().trim();
+               /* ppname = pname.getText().toString().trim();
                 pdetail = detail.getText().toString().trim();
                 pprice = price.getText().toString().trim();
-                plocate = locate.getText().toString().trim();
+                plocate = locate.getText().toString().trim();*/
+                //기존 데이터베이스
 
-                databaseReference.child("itemlist").child("item").push().setValue(ppname);
+                ItemExample itemExample = new ItemExample(pname.getText().toString().trim(), detail.getText().toString().trim(),price.getText().toString().trim(),locate.getText().toString().trim());
+                databaseReference.child("itemlist").setValue(itemExample);
+
+                /*databaseReference.child("itemlist").child("item").push().setValue(ppname);
                 databaseReference.child("itemlist").child("item").push().setValue(pdetail);
                 databaseReference.child("itemlist").child("item").push().setValue(pprice);
-                databaseReference.child("itemlist").child("item").push().setValue(plocate);
+                databaseReference.child("itemlist").child("item").push().setValue(plocate);*/
+                //기존 데이터베이스
                 Toast.makeText(Writepage.this, "등록되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });

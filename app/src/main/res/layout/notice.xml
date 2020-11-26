@@ -29,4 +29,5 @@
         android:gravity="center_vertical"
         android:background="@drawable/back"
         android:text="[공지] 서버 장애로 인해 불편을 드려 죄송합니다." />
+
 </LinearLayout>

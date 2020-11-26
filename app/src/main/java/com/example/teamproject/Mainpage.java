@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 
 public class Mainpage extends AppCompatActivity {
+    private ListView mListView;
 
 
     @Override
@@ -18,6 +22,10 @@ public class Mainpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.chatmain);
         setContentView(R.layout.mainpage);
+
+        mListView = (ListView)findViewById(R.id.listView);
+        dataSetting();
+
 
         Button button=findViewById(R.id.button_writepage);
         button.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +36,15 @@ public class Mainpage extends AppCompatActivity {
             }
         });
     }
+    private void dataSetting(){
+        MyAdapter mMyAdapter = new MyAdapter();
+
+        for(int i=0;i<10;i++){
+            mMyAdapter.addItem(ContextCompat.getDrawable(getApplicationContext(), R.drawable.apple), "name_" + i, "date_"+i, "contents_"+i);
+        }
+        mListView.setAdapter(mMyAdapter);
+    }
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

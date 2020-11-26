@@ -98,7 +98,6 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="상품명을 입력해주세요."
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -134,7 +133,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="상세설명을 입력해주세요."
+
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -170,7 +169,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="가격을 입력해주세요."
+
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -206,7 +205,6 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="위치를 입력해주세요."
                 android:textSize="12sp" />
 
         </LinearLayout>

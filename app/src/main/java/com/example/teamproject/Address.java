@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -25,6 +28,13 @@ import java.net.URLEncoder;
 public class Address extends AppCompatActivity {
     EditText edit;
     TextView text;
+
+    //listview - add
+    ListView listview ;
+    Address_ListViewAdapter adapter;
+    String zipNo_;
+    String rnAdres_;
+    String lnAdres_;
 
     XmlPullParser xpp;
 
@@ -43,6 +53,11 @@ public class Address extends AppCompatActivity {
         edit= (EditText)findViewById(R.id.edit);
         text= (TextView)findViewById(R.id.result);
 
+        //listview - add
+        // 리스트뷰 참조 및 Adapter달기
+        listview = (ListView) findViewById(R.id.lv_address);
+        listview.setAdapter(adapter);
+
         //뒤로가기 버튼
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
         setSupportActionBar(tb) ;
@@ -59,8 +74,34 @@ public class Address extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
+        //listview - add
+        //리스트뷰 클릭
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
+                // get item
+                Address_ListViewItem item = (Address_ListViewItem) parent.getItemAtPosition(position) ;
+
+                String zipNo = item.getzipNo() ;
+                String rnAdres = item.getrnAdres() ;
+                String lnAdres = item.getlnAdres() ;
+                String info = "저장되었습니다 : "+ zipNo +" & "+ rnAdres +" & "+ lnAdres;
+
+                Toast.makeText(getApplicationContext(), info, Toast.LENGTH_LONG).show();
+            }
+        }) ;
     }
     public void mOnClick(View a){
+
+        //listview - add
+        // Adapter 생성
+        adapter = new Address_ListViewAdapter() ;
+        // 리스트뷰 참조 및 Adapter달기
+        listview = (ListView) findViewById(R.id.lv_address);
+        listview.setAdapter(adapter);
+
+
         switch( a.getId() ){
             case R.id.button:
 
@@ -81,7 +122,6 @@ public class Address extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                // TODO Auto-generated method stub
                                 text.setText(data); //TextView에 문자열  data 출력
                             }
                         });
@@ -93,7 +133,7 @@ public class Address extends AppCompatActivity {
 
 
     //XmlPullParser를 이용하여 Naver 에서 제공하는 OpenAPI XML 파일 파싱하기(parsing)
-    String getXmlData() throws UnsupportedEncodingException {
+    private String getXmlData() throws UnsupportedEncodingException {
 
         StringBuffer buffer=new StringBuffer();
 
@@ -130,24 +170,26 @@ public class Address extends AppCompatActivity {
                     case XmlPullParser.START_TAG:
                         tag= xpp.getName();//테그 이름 얻어오기
 
-                        if(tag.equals("item")) ;// 첫번째 검색결과
+                        if(tag.equals("newAddressListAreaCd")) ;// 첫번째 검색결과
                         else if(tag.equals("zipNo")){
                             buffer.append("우편번호 : ");
                             xpp.next();
                             buffer.append(xpp.getText());//title 요소의 TEXT 읽어와서 문자열버퍼에 추가
+                            zipNo_ = xpp.getText();  //listview - add
                             buffer.append("\n"); //줄바꿈 문자 추가
                         }
                         else if(tag.equals("rnAdres")){
                             buffer.append("도로명주소 : ");
                             xpp.next();
                             buffer.append(xpp.getText());//category 요소의 TEXT 읽어와서 문자열버퍼에 추가
+                            rnAdres_ = xpp.getText();  //listview - add
                             buffer.append("\n");//줄바꿈 문자 추가
-                            buffer.append("\n");
                         }
                         else if(tag.equals("lnmAdres")){
                             buffer.append("지번주소 :");
                             xpp.next();
                             buffer.append(xpp.getText());//description 요소의 TEXT 읽어와서 문자열버퍼에 추가
+                            lnAdres_ = xpp.getText();  //listview - add
                             buffer.append("\n");//줄바꿈 문자 추가
                         }
                         break;
@@ -158,14 +200,15 @@ public class Address extends AppCompatActivity {
                     case XmlPullParser.END_TAG:
                         tag= xpp.getName(); //테그 이름 얻어오기
 
-                        if(tag.equals("item")) buffer.append("\n");// 첫번째 검색결과종료..줄바꿈
+                        if(tag.equals("newAddressListAreaCd")) {
+
+                            //listview - add
+                            buffer.append("test: "+zipNo_+" & "+rnAdres_+" & "+lnAdres_+"\n\n");// 첫번째 검색결과종료..줄바꿈
+                            adapter.addItem(zipNo_, rnAdres_, lnAdres_); //adapter에게 값 전달
+                            //adapter.notifyDataSetChanged();
+                        }
                         break;
-
-
-
                 }
-
-
                 eventType= xpp.next();
             }
 

@@ -81,6 +81,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 Intent it4 = new Intent(getApplicationContext(), Writepage.class);
                 startActivity(it4);
                 break;
+            case R.id.address://주소인증 -> 나중에 지우기(테스트용)
+                Intent it5 = new Intent(getApplicationContext(), Address.class);
+                startActivity(it5);
+                break;
+            case R.id.mainpage://주소인증 -> 나중에 지우기(테스트용)
+                Intent it6 = new Intent(getApplicationContext(), Mainpage.class);
+                startActivity(it6);
+                break;
             default:
                 break;
         }

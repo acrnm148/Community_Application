@@ -11,7 +11,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_zipNo"
         android:layout_width="match_parent"
         android:layout_height="76dp"
         android:textSize="15sp"

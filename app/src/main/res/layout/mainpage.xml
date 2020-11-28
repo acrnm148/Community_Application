@@ -29,13 +29,16 @@
             android:paddingBottom="5dp"
             app:srcCompat="@drawable/logo" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="230dp"
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="#DADADA" />
+            android:background="#DADADA"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#000000" />
 
         <ImageView
             android:id="@+id/imageView3"

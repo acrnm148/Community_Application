@@ -2,20 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="133dp"
         android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/apple"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/applepic" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,25 +17,34 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/title2"
+                android:id="@+id/itemtitle2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="title" />
+                android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/itemdetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/list"
+                android:id="@+id/itemlocate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/itemprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
         </LinearLayout>
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black">
+    </View>
 </LinearLayout>

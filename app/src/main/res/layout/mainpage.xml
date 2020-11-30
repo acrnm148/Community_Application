@@ -245,12 +245,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/itemlist"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true" />
-
         <Button
             android:id="@+id/button_writepage"
             android:layout_width="135dp"
@@ -259,6 +253,11 @@
             android:text="상품 등록"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

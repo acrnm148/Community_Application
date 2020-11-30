@@ -1,84 +1,117 @@
 package com.example.teamproject;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
+import java.util.List;
 
-public class MyAdapter extends BaseAdapter{
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
+    private List<productList> mDataset = new ArrayList<>();
 
-    /* 아이템을 세트로 담기 위한 어레이 */
-    private ArrayList<MyItem> mItems = new ArrayList<>();
-
+    @NonNull
     @Override
-    public int getCount() {
-        return mItems.size();
+    public MyAdapter.Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mainpage_ct, parent, false);
+        return new Holder(view);
     }
 
     @Override
-    public MyItem getItem(int position) {
-        return mItems.get(position);
+    public void onBindViewHolder(@NonNull MyAdapter.Holder holder, int position) {
+        ((Holder)holder).onBind(mDataset.get(position));
     }
 
     @Override
-    public long getItemId(int position) {
-        return 0;
+    public int getItemCount() {
+        return mDataset.size();
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    void addItem(productList data) {
+        // 외부에서 item을 추가시킬 함수입니다.
+        mDataset.add(data);
+    }
 
-        Context context = parent.getContext();
+    public class Holder extends RecyclerView.ViewHolder {
+        TextView textViewtitle;
+        TextView textViewlocate;
+        TextView textViewprice;
+        TextView textViewdetail;
 
-        /* 'listview_custom' Layout을 inflate하여 convertView 참조 획득 */
-        if (convertView == null) {
-
-
-
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.mainpage_ct, parent, false);
+        public Holder(@NonNull View view) {
+            super(view);
+            textViewtitle = view.findViewById(R.id.itemtitle2);
+            textViewlocate = view.findViewById(R.id.itemlocate);
+            textViewprice = view.findViewById(R.id.itemprice);
+            textViewdetail = view.findViewById(R.id.itemdetail);
         }
 
-        /* 'listview_custom'에 정의된 위젯에 대한 참조 획득 */
-        ImageView iv_img = (ImageView) convertView.findViewById(R.id.apple) ;
-        TextView tv_name = (TextView) convertView.findViewById(R.id.title2) ;
-        TextView tv_date = (TextView) convertView.findViewById(R.id.date) ;
-        TextView tv_contents = (TextView) convertView.findViewById(R.id.list) ;
-
-        /* 각 리스트에 뿌려줄 아이템을 받아오는데 mMyItem 재활용 */
-        MyItem myItem = getItem(position);
-
-        /* 각 위젯에 세팅된 아이템을 뿌려준다 */
-        iv_img.setImageDrawable(myItem.getIcon());
-        tv_name.setText(myItem.getName());
-        tv_date.setText(myItem.getDate());
-        tv_contents.setText(myItem.getContents());
-
-        /* (위젯에 대한 이벤트리스너를 지정하고 싶다면 여기에 작성하면된다..)  */
-
-
-        return convertView;
+        public void onBind(productList data) {
+            textViewtitle.setText(data.getTitle());
+            textViewlocate.setText(data.getLocate());
+            textViewprice.setText(data.getPrice());
+            textViewdetail.setText(data.getDetail());
+        }
     }
 
-    /* 아이템 데이터 추가를 위한 함수. 자신이 원하는대로 작성 */
+//    public class MyViewHolder extends RecyclerView.ViewHolder {
+//        // each data item is just a string in this case
+//        public TextView textViewtitle;
+//        public TextView textViewlocate;
+//        public TextView textViewprice;
+//        public TextView textViewdetail;
+//        public View rootView;
+//
+//        public MyViewHolder(View v) {
+//            super(v);
+//            textViewtitle = v.findViewById(R.id.itemtitle2);
+//            textViewlocate = v.findViewById(R.id.itemlocate);
+//            textViewprice = v.findViewById(R.id.itemprice);
+//            textViewdetail = v.findViewById(R.id.itemdetail);
+//            rootView = v;
+//        }
+//    }
 
-
-    public void addItem(Drawable img, String name, String date, String contents) {
-        MyItem mItem = new MyItem();
-
-        /* MyItem에 아이템을 setting한다. */
-        mItem.setIcon(img);
-        mItem.setName(name);
-        mItem.setDate(date);
-        mItem.setContents(contents);
-
-        /* mItems에 MyItem을 추가한다. */
-        mItems.add(mItem);
-    }
+//    public MyAdapter(List<productList> myDataset) {
+//        mDataset = myDataset;
+//    }
+//
+//    @Override
+//    public MyHolder onCreateViewHolder(ViewGroup parent, int viewType)
+//    {
+//        Context context = parent.getContext() ;
+//        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) ;
+//
+//        View view = inflater.inflate(R.layout.mainpage_ct, parent, false) ;
+//        MyHolder vh = new MyHolder(view) ;
+//        return vh;
+//    }
+//
+//    @Override
+//    public void onBindViewHolder(@NonNull MyHolder holder, int position) {
+//        productList item = mDataset.get(position);
+//        holder.textViewtitle.setText(item.getTitle());
+//        holder.textViewlocate.setText(item.getLocate());
+//        holder.textViewprice.setText(item.getPrice());
+//        holder.textViewdetail.setText(item.getDetail());
+//    }
+//
+//    @Override
+//    public int getItemCount() {
+//        return mDataset != null ? 0 : mDataset.size();
+//    }
+//
+//    public void addItem(String _a, String _b, String _c, String _d) {
+//        productList pl = new productList();
+//        pl.setTitle(_a);
+//        pl.setDetail(_b);
+//        pl.setLocate(_c);
+//        pl.setPrice(_d);
+//        mDataset.add(pl);
+//        //notifyItemInserted(mDataset.size() - 1);
+//    }
 }

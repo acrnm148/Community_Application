@@ -96,7 +96,7 @@ public class Mystore_black extends AppCompatActivity {
 
 
 
-        but_7 = (Button)findViewById(R.id.button7);
+        but_7 = (Button)findViewById(R.id.send_comment);
 
         but_7.setOnClickListener(new View.OnClickListener() {
             @Override

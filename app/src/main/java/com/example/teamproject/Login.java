@@ -76,7 +76,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 startActivity(it3);
                 break;
             case R.id.testButton://커뮤니티 글쓰기 -> 나중에 지우기(테스트용)
-                Intent it4 = new Intent(getApplicationContext(), Writepage.class);
+                Intent it4 = new Intent(getApplicationContext(), WriteCommunity.class);
                 startActivity(it4);
                 break;
             case R.id.address://주소인증 -> 나중에 지우기(테스트용)
@@ -84,7 +84,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 startActivity(it5);
                 break;
             case R.id.mainpage://주소인증 -> 나중에 지우기(테스트용)
-                Intent it6 = new Intent(getApplicationContext(), Mainpage.class);
+                Intent it6 = new Intent(getApplicationContext(), CommunityMain.class);
                 startActivity(it6);
                 break;
             case R.id.chat://채팅-> 나중에 지우기(테스트용)

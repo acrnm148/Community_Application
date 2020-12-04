@@ -20,180 +20,6 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
-    <LinearLayout
-        android:id="@+id/background_chat_main"
-        android:layout_width="match_parent"
-        android:layout_height="615dp"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp">
-
-        <LinearLayout
-            android:id="@+id/chat1"
-            android:layout_width="match_parent"
-            android:layout_height="98dp"
-            android:background="#FFFFFF"
-            android:clickable="true"
-            android:onClick="chatRoom"
-            android:orientation="horizontal"
-            android:tag="1">
-
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                android:layout_width="70dp"-->
-            <!--                android:layout_height="70dp"-->
-            <!--                android:layout_gravity="center"-->
-            <!--                android:paddingLeft="10dp"-->
-            <!--                app:cardCornerRadius="100dp">-->
-
-            <!--                <ImageView-->
-            <!--                    android:layout_width="0dp"-->
-            <!--                    android:layout_height="103dp"-->
-            <!--                    android:layout_weight="1"-->
-            <!--                    android:adjustViewBounds="true"-->
-            <!--                    android:paddingRight="5sp"-->
-            <!--                    android:src="@drawable/profile_image2" />-->
-            <!--            </androidx.cardview.widget.CardView>-->
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image1"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:src="@drawable/profile_image1" />
-
-            <LinearLayout
-                android:id="@+id/user1_chat"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:orientation="vertical"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
-
-                <LinearLayout
-                    android:id="@+id/user1_info"
-                    android:layout_width="match_parent"
-                    android:layout_height="34dp"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp">
-
-                    <TextView
-                        android:id="@+id/user1_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="강수나"
-                        android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/user1_chat_date"
-                        android:layout_width="149dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="2020년 10월 10일"
-                        android:textColor="#939393"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/user1_last_chat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="문학과 삶 책 구매 가능한가요?"
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/chat2"
-            android:layout_width="match_parent"
-            android:layout_height="92dp"
-            android:background="#FFFFFF"
-            android:clickable="true"
-            android:onClick="chatRoom"
-            android:orientation="horizontal"
-            android:tag="2">
-
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                android:layout_width="70dp"-->
-            <!--                android:layout_height="70dp"-->
-            <!--                android:layout_gravity="center"-->
-            <!--                app:cardCornerRadius="100dp">-->
-
-            <!--                <ImageView-->
-            <!--                    android:layout_width="0dp"-->
-            <!--                    android:layout_height="103dp"-->
-            <!--                    android:layout_weight="1"-->
-            <!--                    android:adjustViewBounds="true"-->
-            <!--                    android:paddingRight="5sp"-->
-            <!--                    android:src="@drawable/profile_image2" />-->
-            <!--            </androidx.cardview.widget.CardView>-->
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image2"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:src="@drawable/profile_image2" />
-
-            <LinearLayout
-                android:id="@+id/user2_chat"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
-
-                <LinearLayout
-                    android:id="@+id/user2_info"
-                    android:layout_width="match_parent"
-                    android:layout_height="34dp"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp">
-
-                    <TextView
-                        android:id="@+id/user2_name"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/user2"
-                        android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/user2_chat_date"
-                        android:layout_width="186dp"
-                        android:layout_height="wrap_content"
-                        android:text="2019년 12월 7일"
-                        android:textColor="#939393"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/user2_last_chat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/last_chat2"
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
     <!--    <LinearLayout-->
     <!--        android:id="@+id/bottom_bar"-->
     <!--        android:layout_width="match_parent"-->
@@ -238,6 +64,12 @@
     <!--            android:layout_weight="1"-->
     <!--            app:srcCompat="@drawable/mypage" />-->
     <!--    </LinearLayout>-->
+    <ListView
+        android:id="@+id/chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="624dp"
+        android:background="#C8C8C8" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"

@@ -48,12 +48,6 @@
             android:name="com.example.teamproject.Mainpage"
             android:label="메인페이지"/>
         <activity
-            android:name="com.example.teamproject.Chatmain"
-            android:label="@string/app_name_chat"/>
-        <activity
-            android:name="com.example.teamproject.Chatroom"
-            android:label="@string/app_name_chatwith"/>
-        <activity
             android:name="com.example.teamproject.Detailpage"
             android:label="@string/app_name_detailpage"/>
         <activity
@@ -84,7 +78,10 @@
         <activity android:name=".Mystore_black"
             android:label="@string/app_name_report"/>
 
-
+        <activity android:name=".chat.Chatroom"
+            android:label="채팅방"/>
+        <activity android:name=".chat.Chatmain"
+            android:label="채팅목록"/>
 
     </application>
 

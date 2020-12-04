@@ -101,7 +101,6 @@ public class Address extends AppCompatActivity {
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.lv_address);
         listview.setAdapter(adapter);
-        adapter.addItem(zipNo_, rnAdres_, lnAdres_); //adapter에게 값 전달
 
 
         switch( a.getId() ){

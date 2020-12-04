@@ -56,6 +56,7 @@ public class Address extends AppCompatActivity {
         //listview - add
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.lv_address);
+
         listview.setAdapter(adapter);
 
         //뒤로가기 버튼
@@ -100,6 +101,7 @@ public class Address extends AppCompatActivity {
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.lv_address);
         listview.setAdapter(adapter);
+        adapter.addItem(zipNo_, rnAdres_, lnAdres_); //adapter에게 값 전달
 
 
         switch( a.getId() ){
@@ -132,7 +134,7 @@ public class Address extends AppCompatActivity {
     }//mOnClick method..
 
 
-    //XmlPullParser를 이용하여 Naver 에서 제공하는 OpenAPI XML 파일 파싱하기(parsing)
+    //XmlPullParser를 이용하여 공공데이터 포털에서 제공하는 OpenAPI XML 파일 파싱하기(parsing)
     private String getXmlData() throws UnsupportedEncodingException {
 
         StringBuffer buffer=new StringBuffer();

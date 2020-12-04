@@ -10,8 +10,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class Address_ListViewAdapter extends BaseAdapter {
+    // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
     private ArrayList<Address_ListViewItem> listViewItemAddressList = new ArrayList<Address_ListViewItem>();
 
+    // ListViewAdapter의 생성자
     public Address_ListViewAdapter(){}
 
     @Override

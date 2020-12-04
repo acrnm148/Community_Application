@@ -149,4 +149,11 @@
     <string name="findMyInfo">아이디·비밀번호 찾기</string>
     <string name="email">Email</string>
 
+
+    <string name="kakaologin">카카오 로그인</string>
+    <string name="kakao_app_key">47889a08a1aa38da8d9238d88da7957b</string>
+
+
+
+
 </resources>

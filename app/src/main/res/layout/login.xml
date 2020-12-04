@@ -18,6 +18,7 @@
         android:background="#000000"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="onClick"
         android:text="메인페이지"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -27,8 +28,7 @@
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.915"
-        android:onClick="onClick"/>
+        app:layout_constraintVertical_bias="0.885" />
 
     <Button
         android:id="@+id/address2"
@@ -117,7 +117,31 @@
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintVertical_bias="0.233" />
+
+    <Button
+        android:id="@+id/chat"
+        android:layout_width="308dp"
+        android:layout_height="53dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="64dp"
+        android:background="#000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="onClick"
+        android:text="채팅"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:backgroundTint="#3589F1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.457" />
 
     <EditText
         android:id="@+id/password"
@@ -192,5 +216,29 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_custom_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:onClick="onClick"
+        android:text="카카오 로그인"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_custom_login_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:onClick="onClick"
+        android:text="카카오 로그아웃"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

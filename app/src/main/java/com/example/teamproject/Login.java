@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-
 public class Login extends AppCompatActivity implements View.OnClickListener{
     private EditText loginID, loginPW;
     private FirebaseAuth firebaseAuth;
@@ -62,7 +61,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                     }
                 });
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -89,10 +87,25 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 Intent it6 = new Intent(getApplicationContext(), Mainpage.class);
                 startActivity(it6);
                 break;
+            case R.id.chat://채팅-> 나중에 지우기(테스트용)
+                Intent it7 = new Intent(getApplicationContext(), Chatmain.class);
+                startActivity(it7);
+                break;
+
+              case R.id.btn_custom_login:  //카카오 로그인
+                  Intent it8 =new Intent(getApplicationContext(),KakaoLogin.class);
+                  startActivity(it8);
+                break;
+
+
+            case R.id.btn_custom_login_out:  //카카오 로그아웃
+                Intent it9 =new Intent(getApplicationContext(),KakaoLogin.class);
+                startActivity(it9);
+                break;
+
             default:
                 break;
         }
     }
-
 
 }

@@ -98,10 +98,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 break;
 
 
-            case R.id.btn_custom_login_out:  //카카오 로그아웃
-                Intent it9 =new Intent(getApplicationContext(),KakaoLogin.class);
-                startActivity(it9);
-                break;
+//            case R.id.btn_custom_login_out:  //카카오 로그아웃
+//                Intent it9 =new Intent(getApplicationContext(),KakaoLogin.class);
+//                startActivity(it9);
+//                break;
 
             default:
                 break;

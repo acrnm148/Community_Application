@@ -1,4 +1,4 @@
-package com.example.teamproject.chat;
+package com.example.teamproject;
 
 public class ChatDTO {
     private String userName;

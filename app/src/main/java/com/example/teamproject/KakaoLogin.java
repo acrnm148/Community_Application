@@ -29,7 +29,7 @@ public class KakaoLogin extends AppCompatActivity {
 
     private  Button btn_custom_login;
    // private TextView kakaologin;
-   private Button btn_custom_login_out;
+ //  private Button btn_custom_login_out;
     private SessionCallback sessionCallback = new SessionCallback();
     Session session;
 
@@ -39,7 +39,7 @@ public class KakaoLogin extends AppCompatActivity {
         setContentView(R.layout.login);
 
         btn_custom_login = (Button) findViewById(R.id.btn_custom_login);
-        btn_custom_login_out = (Button) findViewById(R.id.btn_custom_login_out);
+        //btn_custom_login_out = (Button) findViewById(R.id.btn_custom_login_out);
 
         session = Session.getCurrentSession();
         session.addCallback(sessionCallback);
@@ -57,18 +57,18 @@ public class KakaoLogin extends AppCompatActivity {
             }
         });
 
-        btn_custom_login_out.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UserManagement.getInstance()
-                        .requestLogout(new LogoutResponseCallback() {
-                            @Override
-                            public void onCompleteLogout() {
-                                Toast.makeText(KakaoLogin.this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-            }
-        });
+//        btn_custom_login_out.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                UserManagement.getInstance()
+//                        .requestLogout(new LogoutResponseCallback() {
+//                            @Override
+//                            public void onCompleteLogout() {
+//                                Toast.makeText(KakaoLogin.this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//            }
+//        });
     }
 
     @Override

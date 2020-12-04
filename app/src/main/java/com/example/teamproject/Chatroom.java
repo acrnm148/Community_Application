@@ -1,4 +1,4 @@
-package com.example.teamproject.chat;
+package com.example.teamproject;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,9 +16,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.teamproject.Detailpage;
-import com.example.teamproject.Login;
-import com.example.teamproject.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

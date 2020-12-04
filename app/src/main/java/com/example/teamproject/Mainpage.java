@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Mainpage extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private MyAdapter mAdapter;
+    private Mainpage_ListViewAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,26 +34,30 @@ public class Mainpage extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        mAdapter = new MyAdapter();
+        mAdapter = new Mainpage_ListViewAdapter();//어댑터 객체 선언
         recyclerView.setAdapter(mAdapter);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
 
-        myRef.addChildEventListener(new ChildEventListener() {
+        //DatabaseReference itemlistRef = myRef.child("itemlist");
+
+        //myRef.child("itemlist").child("item").setValue(user).addChildEventListener(new ChildEventListener() {
+        //myRef.child("itemlist").push().addChildEventListener(new ChildEventListener() {
+        myRef.child("itemlist").addChildEventListener(new ChildEventListener() {//리사이클러뷰에 데이터추가(띄움)
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Log.d("tag",snapshot.getValue().toString());
+                Log.d("tag", snapshot.getValue().toString());
 
-                productList item = snapshot.getValue(productList.class);
+                ProductList item = snapshot.getValue(ProductList.class);
                 String a = item.getTitle();
-                String b = item.getDetail();
+                String b = item.getPrice();
                 String c = item.getLocate();
-                String d = item.getPrice();
+                String d = item.getDetail();
 
                 Log.d("FirebaseData", "recieve Data - " + a + " , " + b + " , " + c + " , " + d);
                 mAdapter.addItem(item);
-                mAdapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetChanged();//어댑터에서 받아온 데이터를 리스트뷰로 update
             }
 
             @Override
@@ -78,37 +81,51 @@ public class Mainpage extends AppCompatActivity {
             }
         });
 
-
-
-        Button button=findViewById(R.id.button_writepage);
+        //상품 등록 임시버튼
+        Button button = findViewById(R.id.button_writepage);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Mainpage.this, Writepage.class);
+                Intent intent = new Intent(Mainpage.this, Writepage.class);
                 startActivity(intent);
             }
         });
-    }
+        //리스트뷰 클릭이벤트
+        mAdapter.setOnItemClicklistener(new Mainpage_ListViewAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(View view, int position){
+                Intent intent = new Intent(Mainpage.this, Detailpage.class);
+                startActivity(intent);
+            }
 
+        });
+    }//Oncreate
+
+
+    //toolbar의 back키 눌렀을 때 동작
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+        switch (item.getItemId()) {
+            case android.R.id.home: {
                 finish();
                 return true;
             }
         }
         return super.onOptionsItemSelected(item);
     }
-
+/*
     public void showDetailPage(View v) {
         int id = v.getId();
         LinearLayout layout = (LinearLayout) v.findViewById(id);
         String tag = (String) layout.getTag();
         //Toast.makeText(this, "hi", Toast.LENGTH_LONG).show();
         Intent it = new Intent(this, Detailpage.class);
-        it.putExtra("it_tag",tag);
+        it.putExtra("it_tag", tag);
         startActivity(it);
+    }*/
+
+    private class Holder {
     }
+}
 
 
 
@@ -121,26 +138,4 @@ public class Mainpage extends AppCompatActivity {
 //        it.putExtra("it_tag",tag);
 //        startActivity(it);
 //    }
-}
-//chatmain 화면
-//       Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
-//       setSupportActionBar(tb) ;
-//      getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
-//    getSupportActionBar().setHomeAsUpIndicator(R.drawable.left_arrow);
-//     //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
-//     tb.setTitleTextColor(Color.BLACK);
 
-
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()){
-//            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
-//                finish();
-//                return true;
-//            }
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
-
-
-//}

@@ -62,7 +62,7 @@
                     android:id="@+id/user_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="눈누난나"
+                    android:text="김다영"
                     android:textColor="#020202"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -76,14 +76,6 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#FFFFFF"
-                app:srcCompat="@drawable/star" />
 
         </LinearLayout>
 
@@ -102,7 +94,7 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title1"
+                android:hint="제목"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -111,7 +103,7 @@
                 android:id="@+id/price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/price1"
+                android:hint="500원"
                 android:textColor="#6A6A6A"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -120,7 +112,7 @@
                 android:id="@+id/place"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/place1"
+                android:hint="동의대역"
                 android:textColor="#383838"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -129,8 +121,8 @@
                 android:id="@+id/item_contents"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:hint="나눠드실분~"
                 android:paddingTop="10dp"
-                android:text="무농약 유기농 사과 팝니다~\n1개당 800원이예요~~\n맛있는 사과 놓치지 마세요!"
                 android:textColor="#000000"
                 android:textSize="18sp" />
         </LinearLayout>

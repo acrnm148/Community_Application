@@ -40,15 +40,11 @@ public class Writepage extends AppCompatActivity {
         price=(EditText)findViewById(R.id.editTextTextPersonName4);
         locate=(EditText)findViewById(R.id.editTextTextPersonName5);
 
-
-
-
-
-        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
-        setSupportActionBar(tb) ;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
+        //뒤로가기 버튼
+        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat);
+        setSupportActionBar(tb);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.left_arrow);
-        //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
         tb.setTitleTextColor(Color.BLACK);
 
         Button button=findViewById(R.id.button_add);
@@ -61,13 +57,13 @@ public class Writepage extends AppCompatActivity {
                 String locate1 = locate.getText().toString();
                 String price1 = price.getText().toString();
 
-                productList item = new productList();
+                ProductList item = new ProductList();
                 item.setTitle(title);
                 item.setDetail(detail1);
                 item.setLocate(locate1);
                 item.setPrice(price1);
 
-                databaseReference.push().setValue(item);
+                databaseReference.child("itemlist").push().setValue(item);
 
                 Toast.makeText(Writepage.this, "등록되었습니다.", Toast.LENGTH_SHORT).show();
                 Intent it4 = new Intent(getApplicationContext(), Mainpage.class);

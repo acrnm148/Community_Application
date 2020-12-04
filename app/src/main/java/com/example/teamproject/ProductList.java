@@ -1,23 +1,10 @@
 package com.example.teamproject;
 
-public class productList {
+public class ProductList {
     String title;
     String detail;
     String price;
     String locate;
-
-//    public productList()
-//    {
-//
-//    }
-//
-//    public productList(String _a, String _b, String _c, String _d)
-//    {
-//        title = _a;
-//        detail = _b;
-//        price = _c;
-//        locate = _d;
-//    }
 
     public String getTitle(){return title;}
     public String getDetail(){return detail;}

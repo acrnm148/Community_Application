@@ -14,6 +14,7 @@ import java.util.List;
 public class Mainpage_ListViewAdapter extends RecyclerView.Adapter<Mainpage_ListViewAdapter.Holder> {
     private List<ProductList> Dataset = new ArrayList<>();
     private OnItemClickListener listener;
+   // private CheckBox attendCheckbox;
 
     @NonNull
     @Override
@@ -41,6 +42,7 @@ public class Mainpage_ListViewAdapter extends RecyclerView.Adapter<Mainpage_List
         TextView textViewlocate;
         TextView textViewprice;
         TextView textViewdetail;
+        // CheckBox checkBox1, checkBox2;
 
         public Holder(@NonNull View itemview) {
             super(itemview);
@@ -48,6 +50,10 @@ public class Mainpage_ListViewAdapter extends RecyclerView.Adapter<Mainpage_List
             textViewlocate = itemview.findViewById(R.id.itemlocate);
             textViewprice = itemview.findViewById(R.id.itemprice);
             textViewdetail = itemview.findViewById(R.id.itemdetail);
+            // checkBox1 = itemview.findViewById(R.id.cb_male);
+            // checkBox2 = itemview.findViewById(R.id.cb_female);
+
+
             //리사이클러뷰 클릭이벤트
             itemview.setOnClickListener(new View.OnClickListener() {
                 @Override

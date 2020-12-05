@@ -74,7 +74,7 @@ public class CommunityMain extends AppCompatActivity /*implements NavigationView
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
         setSupportActionBar(tb) ;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
-        //getSupportActionBar().setHomeAsUpIndicator(R.drawable.backspace);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.backspace);
         //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
         tb.setTitleTextColor(Color.BLACK);
 

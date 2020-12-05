@@ -21,6 +21,8 @@ public class Writepage extends AppCompatActivity {
 
     private EditText pname, detail, price, locate;
 
+    /*private CheckBox male, female;*/
+
 
 
     FirebaseAuth firebaseAuth;
@@ -39,6 +41,11 @@ public class Writepage extends AppCompatActivity {
         detail=(EditText)findViewById(R.id.editTextTextPersonName3);
         price=(EditText)findViewById(R.id.editTextTextPersonName4);
         locate=(EditText)findViewById(R.id.editTextTextPersonName5);
+      /*  female = (CheckBox)findViewById(R.id.cb_female);
+        male=(CheckBox)findViewById(R.id.cb_male);
+
+        female.setText("female");
+        male.setText("male");*/
 
         //뒤로가기 버튼
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat);
@@ -56,6 +63,12 @@ public class Writepage extends AppCompatActivity {
                 String detail1 = detail.getText().toString();
                 String locate1 = locate.getText().toString();
                 String price1 = price.getText().toString();
+             /*   String male1 = male.getText().toString();
+                String female2 = female.getText().toString();
+
+                if(male1.isChecked() == true){
+
+                }*/
 
                 ProductList item = new ProductList();
                 item.setTitle(title);

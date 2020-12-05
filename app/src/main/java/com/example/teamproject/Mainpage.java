@@ -56,6 +56,7 @@ public class Mainpage extends AppCompatActivity {
                 String d = item.getDetail();
 
                 Log.d("FirebaseData", "recieve Data - " + a + " , " + b + " , " + c + " , " + d);
+
                 mAdapter.addItem(item);
                 mAdapter.notifyDataSetChanged();//어댑터에서 받아온 데이터를 리스트뷰로 update
             }

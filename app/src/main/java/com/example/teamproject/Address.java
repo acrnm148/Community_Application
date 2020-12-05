@@ -16,6 +16,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -26,15 +28,20 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class Address extends AppCompatActivity {
-    EditText edit;
-    TextView text;
+    private FirebaseDatabase mDatabase;
+    private EditText edit;
+    private TextView text;
 
     //listview - add
-    ListView listview ;
-    Address_ListViewAdapter adapter;
-    String zipNo_;
-    String rnAdres_;
-    String lnAdres_;
+    private ListView listview ;
+    private Address_ListViewAdapter adapter;
+    private String zipNo_;
+    private String rnAdres_;
+    private String lnAdres_;
+    private String info;
+    private String name_;
+    private String email_;
+    private String address_;
 
     XmlPullParser xpp;
 
@@ -44,11 +51,12 @@ public class Address extends AppCompatActivity {
 
     String data;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.address);
+
+        mDatabase = FirebaseDatabase.getInstance();
 
         edit= (EditText)findViewById(R.id.edit);
         text= (TextView)findViewById(R.id.result);
@@ -70,6 +78,15 @@ public class Address extends AppCompatActivity {
         Button logo = (Button) findViewById(R.id.joinFin);
         logo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Join join = new Join();
+                name_ = join.getName_();
+                email_ = join.getEmail_();
+                address_ = info;
+
+                UserModel userModel = new UserModel(name_, email_, address_);
+                mDatabase.getReference("users").child(name_).setValue(userModel);
+                Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다 : "+ name_+" "+ email_+" "+address_, Toast.LENGTH_LONG).show();
+
                 int id = v.getId();
                 Intent it = new Intent(getApplicationContext(), Mainpage.class);
                 startActivity(it);
@@ -84,12 +101,18 @@ public class Address extends AppCompatActivity {
                 // get item
                 Address_ListViewItem item = (Address_ListViewItem) parent.getItemAtPosition(position) ;
 
-                String zipNo = item.getzipNo() ;
-                String rnAdres = item.getrnAdres() ;
-                String lnAdres = item.getlnAdres() ;
-                String info = "저장되었습니다 : "+ zipNo +" & "+ rnAdres +" & "+ lnAdres;
+                UserModel userModel = new UserModel();
 
-                Toast.makeText(getApplicationContext(), info, Toast.LENGTH_LONG).show();
+                String zipNo = item.getzipNo();
+                String rnAdres = item.getrnAdres();
+                String lnAdres = item.getlnAdres();
+                info = zipNo +" "+ rnAdres +" "+ lnAdres;
+                userModel.setAddress(info);
+
+                userModel = new UserModel(name_, email_, rnAdres);
+                Toast.makeText(getApplicationContext(), "주소가 선택되었습니다 : "+ info, Toast.LENGTH_LONG).show();
+
+//                mDatabase.getReference("users").child(name).setValue(userModel);
             }
         }) ;
     }

@@ -67,8 +67,8 @@
     <ListView
         android:id="@+id/chat_list"
         android:layout_width="match_parent"
-        android:layout_height="624dp"
-        android:background="#C8C8C8" />
+        android:layout_height="630dp"
+        android:background="#FFFFFF" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"

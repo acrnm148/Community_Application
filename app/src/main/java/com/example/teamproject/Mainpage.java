@@ -40,11 +40,7 @@ public class Mainpage extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
 
-        //DatabaseReference itemlistRef = myRef.child("itemlist");
-
-        //myRef.child("itemlist").child("item").setValue(user).addChildEventListener(new ChildEventListener() {
-        //myRef.child("itemlist").push().addChildEventListener(new ChildEventListener() {
-        myRef.child("itemlist").addChildEventListener(new ChildEventListener() {//리사이클러뷰에 데이터추가(띄움)
+        myRef.child("itemlist").addChildEventListener(new ChildEventListener() {//리사이클러뷰에 데이터추가
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Log.d("tag", snapshot.getValue().toString());
@@ -91,6 +87,17 @@ public class Mainpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //커뮤니티버튼
+        Button cbutton = findViewById(R.id.bcommunity);
+        cbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Mainpage.this, CommunityMain.class);
+                startActivity(intent);
+            }
+        });
+
         //리스트뷰 클릭이벤트
         mAdapter.setOnItemClicklistener(new Mainpage_ListViewAdapter.OnItemClickListener(){
             @Override
@@ -113,19 +120,8 @@ public class Mainpage extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-/*
-    public void showDetailPage(View v) {
-        int id = v.getId();
-        LinearLayout layout = (LinearLayout) v.findViewById(id);
-        String tag = (String) layout.getTag();
-        //Toast.makeText(this, "hi", Toast.LENGTH_LONG).show();
-        Intent it = new Intent(this, Detailpage.class);
-        it.putExtra("it_tag", tag);
-        startActivity(it);
-    }*/
-
-    private class Holder {
-    }
+    //private class Holder {
+    //}
 }
 
 

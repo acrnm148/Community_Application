@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Detailpage extends AppCompatActivity {
     private TextView title, detail, locate, price;
@@ -24,52 +28,33 @@ public class Detailpage extends AppCompatActivity {
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-//
+        DatabaseReference myRef = database.getReference("itemtest");
+
         title = (TextView) findViewById(R.id.title);
         price = (TextView) findViewById(R.id.price);
-        price = (TextView) findViewById(R.id.price);
+        locate = (TextView) findViewById(R.id.place);
         detail = (TextView) findViewById(R.id.item_contents);
 
-/*        ValueEventListener postListener = new ValueEventListener() {
+        /*myRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                ProductList item = dataSnapshot.getValue(ProductList.class);
-                title = item.getTitle();
-                item.getDetail();
-                item.getLocate();
-                item.getPrice();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String titleValue = snapshot.getValue(String.class);
+                String priceValue = snapshot.getValue(String.class);
+                String locateValue = snapshot.getValue(String.class);
+                String detailValue = snapshot.getValue(String.class);
+                title.setText(titleValue);
+                price.setText(priceValue);
+                locate.setText(locateValue);
+                detail.setText(detailValue);
 
-                myRef.child("itemlist").setValue(item);
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-            }
+            public void onCancelled(@NonNull DatabaseError error) {
 
-        };
-        myRef.addValueEventListener(postListener);*/
-/*
-        myRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Log.d("tag", snapshot.getValue().toString());
+            } 텍스트뷰로 파이어베이스 연결
+        });*/
 
-                ProductList item = snapshot.getValue(ProductList.class);
-                String a = item.getTitle();
-                String b = item.getDetail();
-                String c = item.getLocate();
-                String d = item.getPrice();
-
-                Log.d("FirebaseData", "recieve Data - " + a + " , " + b + " , " + c + " , " + d);
-                mAdapter.addItem(item);
-                mAdapter.notifyDataSetChanged();//어댑터에서 받아온 데이터를 리스트뷰로 update
-            }
-            });
-*/
 
             //뒤로가기 버튼
             Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat);

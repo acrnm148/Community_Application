@@ -26,25 +26,32 @@
                 android:id="@+id/itemtitle2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/itemdetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/itemlocate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/itemprice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:textColor="#6A6A6A"/>
+
+            <TextView
+                android:id="@+id/itemlocate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#6A6A6A"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/itemdetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
 
         </LinearLayout>
     </LinearLayout>

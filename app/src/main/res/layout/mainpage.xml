@@ -32,7 +32,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName2"
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_height="41dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:background="#DADADA"
@@ -43,7 +43,7 @@
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="35dp"
-            android:layout_height="32dp"
+            android:layout_height="41dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:background="#DADADA"
@@ -68,12 +68,43 @@
     <LinearLayout
         android:id="@+id/background"
         android:layout_width="match_parent"
-        android:layout_height="615dp"
+        android:layout_height="719dp"
         android:orientation="vertical"
         android:paddingLeft="8dp"
         android:paddingTop="5dp"
         android:paddingRight="8dp"
         android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_writepage"
+                android:layout_width="194dp"
+                android:layout_height="wrap_content"
+                android:background="#7BB0F3"
+                android:text="상품 등록"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:backgroundTint="#84ABDC" />
+
+            <Space
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1000" />
+
+            <Button
+                android:id="@+id/bcommunity"
+                android:layout_width="192dp"
+                android:layout_height="wrap_content"
+                android:background="#84ABDC"
+                android:text="커뮤니티"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:backgroundTint="#84ABDC" />
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
@@ -86,25 +117,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/my_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="541dp" />
-
-        <Button
-            android:id="@+id/button_writepage"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:background="#3589F1"
-            android:text="상품 등록"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:layout_height="645dp" />
 
     </LinearLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_navigation_view" />
 
 </LinearLayout>

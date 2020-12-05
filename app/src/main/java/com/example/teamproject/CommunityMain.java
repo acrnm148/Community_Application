@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -70,12 +71,11 @@ public class CommunityMain extends AppCompatActivity /*implements NavigationView
 
             }
         });
-
-        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat) ;
-        setSupportActionBar(tb) ;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.backspace);
-        //getSupportActionBar().setDisplayShowTitleEnabled(false); //?
+        //뒤로가기
+        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar_chat);
+        setSupportActionBar(tb);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.left_arrow);
         tb.setTitleTextColor(Color.BLACK);
 
         Button btn = (Button) findViewById(R.id.community_write);
@@ -87,6 +87,15 @@ public class CommunityMain extends AppCompatActivity /*implements NavigationView
         });
 
 }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
    /* public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();

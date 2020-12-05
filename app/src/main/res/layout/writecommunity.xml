@@ -24,16 +24,16 @@
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:layout_marginBottom="223dp"
+        android:autofillHints=""
         android:background="#EAE9E9"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_toolbar_chat"
-        app:layout_constraintVertical_bias="0.861"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.555" />
 
     <TextView
         android:id="@+id/tv_zipNo"
@@ -48,9 +48,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/writeCommunity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_toolbar_chat" />
+        app:layout_constraintTop_toBottomOf="@+id/app_toolbar_chat"
+        app:layout_constraintVertical_bias="0.298" />
 
     <TextView
         android:id="@+id/textView2"

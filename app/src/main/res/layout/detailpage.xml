@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="261dp"
             android:background="#FFFFFF"
-            app:srcCompat="@drawable/apple" />
+            app:srcCompat="@drawable/applepic" />
 
         <Space
             android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                     android:id="@+id/user_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="부산광역시 수영구"
+                    android:text="북구 화명3동"
                     android:textColor="#989898"
                     android:textStyle="bold" />
 
@@ -86,7 +86,7 @@
         <LinearLayout
             android:id="@+id/item_info"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="20dp">
 
@@ -94,7 +94,7 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="제목"
+                android:text="맛있는 사과"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -104,6 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="500원"
+                android:text="개당 1000원"
                 android:textColor="#6A6A6A"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -113,26 +114,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="동의대역"
+                android:text="부산광역시 부산진구 가야동"
                 android:textColor="#383838"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/item_contents"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="416dp"
+                android:layout_height="178dp"
                 android:hint="나눠드실분~"
                 android:paddingTop="10dp"
+                android:text="맛있어요~! 농약없이 키운 유기농사과에요~~ ^^"
                 android:textColor="#000000"
                 android:textSize="18sp" />
         </LinearLayout>
 
+
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="match_parent"
+        android:layout_height="51dp" />
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
+        android:layout_height="65dp"
         android:background="#3589F1 "
         android:text="채팅하기"
         android:textColor="#FFFFFF"

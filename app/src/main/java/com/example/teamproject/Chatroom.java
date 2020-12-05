@@ -37,7 +37,7 @@ public class Chatroom extends AppCompatActivity {
     private String userPWD;
 
     DatabaseReference firebaseDatabase = FirebaseDatabase.getInstance().getReference("chat");
-    DatabaseReference databaseReference = firebaseDatabase.child("chat2");
+    DatabaseReference databaseReference = firebaseDatabase.child("임도연");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class Chatroom extends AppCompatActivity {
         chat_view = (ListView) findViewById(R.id.chat_view);
 
         // 메인화면/목록 에서 받아온 채팅방 이름, 유저 이름 저장
-        CHAT_NAME = "수나와 세연이의 채팅방2";
+        CHAT_NAME = "임도연";
         USER_NAME = "강수나";
         //Intent intent = getIntent();
         //CHAT_NAME = intent.getStringExtra("chatName");

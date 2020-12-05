@@ -31,14 +31,6 @@
             android:label="로그인">
         </activity>
         <activity
-            android:name=".FindMyInfo"
-            android:label="아이디·비밀번호 찾기">
-        </activity>
-        <activity
-            android:name=".CheckMyInfo"
-            android:label="아이디·비밀번호 확인">
-        </activity>
-        <activity
             android:name=".Join"
             android:label="회원가입">
         </activity>
@@ -67,25 +59,10 @@
             android:label="@string/app_name_writepage"/>
         <activity android:name=".Mypage_notice"
             android:label="@string/app_name2"/>
-        <activity android:name=".Mypage_sellList"
-            android:label="@string/app_name3"/>
-        <activity android:name=".Mypage_buyList"
-            android:label="@string/app_name4"/>
-        <activity android:name=".Mypage_myScripts"
-            android:label="@string/app_name5"/>
-        <activity android:name=".Mypage_writeReview"
-            android:label="@string/app_name6"/>
         <activity android:name=".CommunityMain"
             android:label="@string/app_name7"/>
         <activity android:name=".CommunityDetail"
             android:label="@string/app_name8"/>
-        <activity android:name=".Mystore"
-            android:label="내 상점"/>
-        <activity android:name=".Mystore_sellList"
-            android:label="@string/app_name_sell"/>
-
-        <activity android:name=".Mystore_review"
-            android:label="@string/app_name_review"/>
 
         <activity android:name=".Mystore_black"
             android:label="@string/app_name_report"/>

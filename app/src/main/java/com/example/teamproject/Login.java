@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         Button loginB = findViewById(R.id.loginB);
 
         TextView joinFinB = findViewById(R.id.membership);
-        Button testWriteB = findViewById(R.id.testButton);
+
 
 
         loginID.setOnClickListener(this);
@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         loginB.setOnClickListener(this);
 
         joinFinB.setOnClickListener(this);
-        testWriteB.setOnClickListener(this);
+
     }
 
     private void login(){
@@ -72,33 +72,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 Intent it3 = new Intent(getApplicationContext(), Join.class);
                 startActivity(it3);
                 break;
-            case R.id.testButton://커뮤니티 글쓰기 -> 나중에 지우기(테스트용)
-                Intent it4 = new Intent(getApplicationContext(), WriteCommunity.class);
-                startActivity(it4);
-                break;
-            case R.id.address://주소인증 -> 나중에 지우기(테스트용)
-                Intent it5 = new Intent(getApplicationContext(), Address.class);
-                startActivity(it5);
-                break;
-            case R.id.mainpage://메인페이지 -> 나중에 지우기(테스트용)
-                Intent it6 = new Intent(getApplicationContext(), Mainpage.class);
-                startActivity(it6);
-                break;
-            case R.id.chat://채팅-> 나중에 지우기(테스트용)
-                Intent it7 = new Intent(getApplicationContext(), Chatmain.class);
-                startActivity(it7);
-                break;
+
 
               case R.id.btn_custom_login:  //카카오 로그인
                   Intent it8 =new Intent(getApplicationContext(), KakaoLogin.class);
                   startActivity(it8);
                 break;
-
-
-//            case R.id.btn_custom_login_out:  //카카오 로그아웃
-//                Intent it9 =new Intent(getApplicationContext(),KakaoLogin.class);
-//                startActivity(it9);
-//                break;
 
             default:
                 break;

@@ -30,7 +30,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         loginID = (EditText) findViewById(R.id.username);
         loginPW = (EditText) findViewById(R.id.password);
         Button loginB = findViewById(R.id.loginB);
-        TextView findIDB = findViewById(R.id.findmyinfo);
+
         TextView joinFinB = findViewById(R.id.membership);
         Button testWriteB = findViewById(R.id.testButton);
 
@@ -38,7 +38,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         loginID.setOnClickListener(this);
         loginPW.setOnClickListener(this);
         loginB.setOnClickListener(this);
-        findIDB.setOnClickListener(this);
+
         joinFinB.setOnClickListener(this);
         testWriteB.setOnClickListener(this);
     }
@@ -67,10 +67,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             case R.id.loginB:
                 login();
                 break;
-            case R.id.findmyinfo://아이디/비밀번호 찾기
-                Intent it2 = new Intent(getApplicationContext(), FindMyInfo.class);
-                startActivity(it2);
-                break;
+
             case R.id.membership://회원가입
                 Intent it3 = new Intent(getApplicationContext(), Join.class);
                 startActivity(it3);
@@ -92,10 +89,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 startActivity(it7);
                 break;
 
-              case R.id.btn_custom_login:  //카카오 로그인
-                  Intent it8 =new Intent(getApplicationContext(),KakaoLogin.class);
-                  startActivity(it8);
-                break;
+//              case R.id.btn_custom_login:  //카카오 로그인
+//                  Intent it8 =new Intent(getApplicationContext(),KakaoLogin.class);
+//                  startActivity(it8);
+//                break;
 
 
 //            case R.id.btn_custom_login_out:  //카카오 로그아웃

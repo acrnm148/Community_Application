@@ -1,4 +1,6 @@
-package com.example.teamproject;
+package com.lakue.kakaologinsample;
+
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
@@ -12,39 +14,38 @@ import com.kakao.auth.KakaoSDK;
 
 
 public class GlobalApplication extends Application {
-    private static GlobalApplication instance;
-
-    public static GlobalApplication getGlobalApplicationContext() {
-        if (instance == null) {
-            throw new IllegalStateException("This Application does not inherit com.kakao.GlobalApplication");
-        }
-
-        return instance;
-    }
+    private static volatile GlobalApplication instance = null;
+    private static volatile Activity currentActivity = null;
 
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
-
-        // Kakao Sdk 초기화
-        KakaoSDK.init(new KakaoSDKAdapter());
+        KakaoSDK.init(new KaKaoSDKAdapter());
     }
 
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-        instance = null;
+    public static GlobalApplication getGlobalApplicationContext(){
+        return instance;
     }
 
-    public class KakaoSDKAdapter extends KakaoAdapter {
+    public static void setCurrentActivity(Activity currentActivity){
+        GlobalApplication.currentActivity = currentActivity;
+    }
+
+    public static Activity getCurrentActivity(){
+        return currentActivity;
+    }
+
+    public class KaKaoSDKAdapter extends KakaoAdapter{
 
         @Override
         public ISessionConfig getSessionConfig() {
             return new ISessionConfig() {
                 @Override
                 public AuthType[] getAuthTypes() {
-                    return new AuthType[] {AuthType.KAKAO_LOGIN_ALL};
+                    return new AuthType[]{
+                            AuthType.KAKAO_LOGIN_ALL
+                    };
                 }
 
                 @Override
@@ -64,12 +65,12 @@ public class GlobalApplication extends Application {
 
                 @Override
                 public boolean isSaveFormData() {
-                    return true;
+                    return false;
                 }
             };
         }
 
-        // Application이 가지고 있는 정보를 얻기 위한 인터페이스
+
         @Override
         public IApplicationConfig getApplicationConfig() {
             return new IApplicationConfig() {
@@ -80,5 +81,7 @@ public class GlobalApplication extends Application {
             };
         }
     }
-}
 
+
+
+}

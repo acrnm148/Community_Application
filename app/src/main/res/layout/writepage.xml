@@ -371,5 +371,6 @@
         android:text="등록하기"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:backgroundTint="#84ABDC" />
 </LinearLayout>

@@ -67,18 +67,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             case R.id.loginB:
                 login();
                 break;
-
             case R.id.membership://회원가입
-                Intent it3 = new Intent(getApplicationContext(), Join.class);
-                startActivity(it3);
+                Intent it_ = new Intent(getApplicationContext(), Join.class);
+                startActivity(it_);
                 break;
-
-
               case R.id.btn_custom_login:  //카카오 로그인
-                  Intent it8 =new Intent(getApplicationContext(), KakaoLogin.class);
-                  startActivity(it8);
+                  Intent it__ =new Intent(getApplicationContext(), KakaoLogin.class);
+                  startActivity(it__);
                 break;
-
             default:
                 break;
         }

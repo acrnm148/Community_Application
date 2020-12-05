@@ -31,15 +31,9 @@ import java.io.File;
 public class Join extends AppCompatActivity {
     private EditText joinID;
     private EditText joinPW;
-    private EditText joinName;
-    private EditText joinJumin;
-    private EditText joinCallnum;
-    private EditText joinPW_check;
     private Button join;
     public String email_ = "acrnm148@gmail.com";
     public String name_ = "강수나";
-//    private File tempFile;
-//    private FirebaseAuth mAuth;
 
     private FirebaseDatabase mDatabase;
 
@@ -60,27 +54,17 @@ public class Join extends AppCompatActivity {
 
         joinID = (EditText) findViewById(R.id.joinID);
         joinPW = (EditText) findViewById(R.id.joinPW);
-        joinName = (EditText) findViewById(R.id.joinName);
-        joinJumin = (EditText) findViewById(R.id.joinresnum);
-        joinCallnum = (EditText) findViewById(R.id.joinNumber);
-        joinPW_check = (EditText) findViewById(R.id.joinPwCheck);
         join = (Button) findViewById(R.id.joinFin);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        //mDatabase = FirebaseDatabase.getInstance().getReference();
 
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //xml파일에서 받아온 텍스트를 정의
                 //공백인 부분을 제거하고 보여주는 trim();
-                final String name = joinName.getText().toString().trim();
-                final String jumin = joinJumin.getText().toString().trim();
-                final String callnum = joinCallnum.getText().toString().trim();
                 final String email = joinID.getText().toString().trim();
                 final String pwd = joinPW.getText().toString().trim();
-                final String pwcheck = joinPW_check.getText().toString().trim();
-                setEmail_(email);
-                setName_(name);
 
                 firebaseAuth.createUserWithEmailAndPassword(email, pwd)
                         .addOnCompleteListener(Join.this, new OnCompleteListener<AuthResult>() {
@@ -88,19 +72,8 @@ public class Join extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
 
                                 if (task.isSuccessful()) {
-                                    //add
-//                                    userModel.userName = name;
-//                                    userModel.uid = email;
-                                    //userModel.profileImageUrl = imageUrl.getResult().toString();
-
                                     UserModel userModel = new UserModel();
-
-                                    // database에 저장 - add=================
-//                                    UserModel userModel = new UserModel(name, email);
-//                                    mDatabase.getReference("users").child(name).setValue(userModel);
-                                    //======================================
-
-                                    Toast.makeText(Join.this, "등록 성공 : "+ email_ + "  "+ name_, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Join.this, "등록 성공", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(Join.this, Address.class);
                                     startActivity(intent);
                                     finish();

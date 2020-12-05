@@ -85,7 +85,7 @@ public class Address extends AppCompatActivity {
 
                 UserModel userModel = new UserModel(name_, email_, address_);
                 mDatabase.getReference("users").child(name_).setValue(userModel);
-                Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다 : "+ name_+" "+ email_+" "+address_, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다", Toast.LENGTH_LONG).show();
 
                 int id = v.getId();
                 Intent it = new Intent(getApplicationContext(), Mainpage.class);

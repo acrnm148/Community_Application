@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".KakaoLogin"
-            android:label="카카오로그인인"/>
+            android:label="카카오로그인"/>
         <activity
             android:name=".Login"
             android:label="로그인">

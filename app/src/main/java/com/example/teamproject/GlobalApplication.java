@@ -81,6 +81,4 @@ public class GlobalApplication extends Application {
         }
     }
 
-
-
 }
